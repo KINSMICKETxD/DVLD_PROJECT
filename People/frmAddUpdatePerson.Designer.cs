@@ -30,57 +30,58 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdatePerson));
             this.lbAddPerson = new System.Windows.Forms.Label();
-            this.lbPersonId = new System.Windows.Forms.Label();
+            this.textBox = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.linkRemoveImage = new System.Windows.Forms.LinkLabel();
+            this.linkSetImage = new System.Windows.Forms.LinkLabel();
+            this.PersonImage = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.tbNationalNumb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbThirdName = new System.Windows.Forms.TextBox();
+            this.tbSecondName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbNationalNumb = new System.Windows.Forms.TextBox();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.tbAddress = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.tbPhone = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.PersonImage = new System.Windows.Forms.PictureBox();
-            this.linkSetImage = new System.Windows.Forms.LinkLabel();
-            this.linkRemoveImage = new System.Windows.Forms.LinkLabel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbPersonID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lbAddPerson
@@ -94,15 +95,15 @@
             this.lbAddPerson.TabIndex = 0;
             this.lbAddPerson.Text = "Add New Person";
             // 
-            // lbPersonId
+            // textBox
             // 
-            this.lbPersonId.AutoSize = true;
-            this.lbPersonId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPersonId.Location = new System.Drawing.Point(53, 77);
-            this.lbPersonId.Name = "lbPersonId";
-            this.lbPersonId.Size = new System.Drawing.Size(107, 24);
-            this.lbPersonId.TabIndex = 1;
-            this.lbPersonId.Text = "Person ID:";
+            this.textBox.AutoSize = true;
+            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.Location = new System.Drawing.Point(53, 77);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(107, 24);
+            this.textBox.TabIndex = 1;
+            this.textBox.Text = "Person ID:";
             // 
             // label1
             // 
@@ -139,9 +140,9 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbLastName);
+            this.groupBox1.Controls.Add(this.tbThirdName);
+            this.groupBox1.Controls.Add(this.tbSecondName);
             this.groupBox1.Controls.Add(this.tbFirstName);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox4);
@@ -159,6 +160,401 @@
             this.groupBox1.Size = new System.Drawing.Size(1186, 515);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnClose.FlatAppearance.BorderSize = 3;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(563, 457);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(137, 36);
+            this.btnClose.TabIndex = 39;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.FlatAppearance.BorderSize = 3;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(706, 457);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(137, 36);
+            this.btnSave.TabIndex = 38;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // linkRemoveImage
+            // 
+            this.linkRemoveImage.AutoSize = true;
+            this.linkRemoveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkRemoveImage.Location = new System.Drawing.Point(933, 369);
+            this.linkRemoveImage.Name = "linkRemoveImage";
+            this.linkRemoveImage.Size = new System.Drawing.Size(129, 20);
+            this.linkRemoveImage.TabIndex = 37;
+            this.linkRemoveImage.TabStop = true;
+            this.linkRemoveImage.Text = "Remove Image";
+            // 
+            // linkSetImage
+            // 
+            this.linkSetImage.AutoSize = true;
+            this.linkSetImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkSetImage.Location = new System.Drawing.Point(951, 331);
+            this.linkSetImage.Name = "linkSetImage";
+            this.linkSetImage.Size = new System.Drawing.Size(92, 20);
+            this.linkSetImage.TabIndex = 36;
+            this.linkSetImage.TabStop = true;
+            this.linkSetImage.Text = "Set Image";
+            // 
+            // PersonImage
+            // 
+            this.PersonImage.Image = ((System.Drawing.Image)(resources.GetObject("PersonImage.Image")));
+            this.PersonImage.Location = new System.Drawing.Point(911, 124);
+            this.PersonImage.Name = "PersonImage";
+            this.PersonImage.Size = new System.Drawing.Size(171, 181);
+            this.PersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PersonImage.TabIndex = 35;
+            this.PersonImage.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Austria",
+            "Azerbaijan",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Central African Republic",
+            "Chad",
+            "Channel Islands",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Costa Rica",
+            "Côte d\'Ivoire",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "DR Congo",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini",
+            "Ethiopia",
+            "Faeroe Islands",
+            "Finland",
+            "France",
+            "French Guiana",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Gibraltar",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Holy See",
+            "Honduras",
+            "Hong Kong",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Isle of Man",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macao",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Mauritania",
+            "Mauritius",
+            "Mayotte",
+            "Mexico",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Namibia",
+            "Nepal",
+            "Netherlands",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "North Korea",
+            "North Macedonia",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Panama",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Réunion",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Saint Helena",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "San Marino",
+            "Sao Tome & Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Somalia",
+            "South Africa",
+            "South Korea",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "State of Palestine",
+            "Sudan",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "The Bahamas",
+            "Timor-Leste",
+            "Togo",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States",
+            "Uruguay",
+            "Uzbekistan",
+            "Venezuela",
+            "Vietnam",
+            "Western Sahara",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"});
+            this.comboBox1.Location = new System.Drawing.Point(672, 224);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(171, 32);
+            this.comboBox1.TabIndex = 34;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(622, 224);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(44, 35);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 33;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(528, 235);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 24);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Country:";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(672, 173);
+            this.tbPhone.Multiline = true;
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(171, 29);
+            this.tbPhone.TabIndex = 31;
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(622, 173);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(44, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 30;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(539, 184);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 24);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Phone:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(672, 128);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(171, 26);
+            this.dateTimePicker1.TabIndex = 28;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(622, 124);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(44, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAddress.Location = new System.Drawing.Point(232, 316);
+            this.tbAddress.Multiline = true;
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(611, 118);
+            this.tbAddress.TabIndex = 26;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(232, 256);
+            this.tbEmail.Multiline = true;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(171, 29);
+            this.tbEmail.TabIndex = 25;
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFemale.Location = new System.Drawing.Point(380, 191);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(92, 28);
+            this.rbFemale.TabIndex = 24;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(318, 184);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(44, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 23;
+            this.pictureBox6.TabStop = false;
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMale.Location = new System.Drawing.Point(232, 191);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(69, 28);
+            this.rbMale.TabIndex = 22;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+            // 
+            // tbNationalNumb
+            // 
+            this.tbNationalNumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNationalNumb.Location = new System.Drawing.Point(232, 124);
+            this.tbNationalNumb.Multiline = true;
+            this.tbNationalNumb.Name = "tbNationalNumb";
+            this.tbNationalNumb.Size = new System.Drawing.Size(171, 29);
+            this.tbNationalNumb.TabIndex = 21;
             // 
             // label10
             // 
@@ -200,117 +596,41 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "First";
             // 
-            // textBox3
+            // tbLastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(911, 66);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 29);
-            this.textBox3.TabIndex = 16;
+            this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLastName.Location = new System.Drawing.Point(911, 66);
+            this.tbLastName.Multiline = true;
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(171, 29);
+            this.tbLastName.TabIndex = 16;
             // 
-            // textBox2
+            // tbThirdName
             // 
-            this.textBox2.Location = new System.Drawing.Point(672, 66);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 29);
-            this.textBox2.TabIndex = 15;
+            this.tbThirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThirdName.Location = new System.Drawing.Point(672, 66);
+            this.tbThirdName.Multiline = true;
+            this.tbThirdName.Name = "tbThirdName";
+            this.tbThirdName.Size = new System.Drawing.Size(171, 29);
+            this.tbThirdName.TabIndex = 15;
             // 
-            // textBox1
+            // tbSecondName
             // 
-            this.textBox1.Location = new System.Drawing.Point(445, 66);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 29);
-            this.textBox1.TabIndex = 14;
+            this.tbSecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSecondName.Location = new System.Drawing.Point(445, 66);
+            this.tbSecondName.Multiline = true;
+            this.tbSecondName.Name = "tbSecondName";
+            this.tbSecondName.Size = new System.Drawing.Size(171, 29);
+            this.tbSecondName.TabIndex = 14;
             // 
             // tbFirstName
             // 
+            this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFirstName.Location = new System.Drawing.Point(232, 66);
             this.tbFirstName.Multiline = true;
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(171, 29);
             this.tbFirstName.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(483, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 24);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Date Of Birth:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 316);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Address:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Email:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Gendor:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "National No.:";
-            // 
-            // tbNationalNumb
-            // 
-            this.tbNationalNumb.Location = new System.Drawing.Point(232, 124);
-            this.tbNationalNumb.Multiline = true;
-            this.tbNationalNumb.Name = "tbNationalNumb";
-            this.tbNationalNumb.Size = new System.Drawing.Size(171, 29);
-            this.tbNationalNumb.TabIndex = 21;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMale.Location = new System.Drawing.Point(232, 191);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(69, 28);
-            this.rbMale.TabIndex = 22;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(318, 184);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(44, 35);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 23;
-            this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -362,194 +682,90 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // rbFemale
+            // label6
             // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFemale.Location = new System.Drawing.Point(380, 191);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(92, 28);
-            this.rbFemale.TabIndex = 24;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(483, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 24);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Date Of Birth:";
             // 
-            // tbEmail
+            // label5
             // 
-            this.tbEmail.Location = new System.Drawing.Point(232, 256);
-            this.tbEmail.Multiline = true;
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(171, 29);
-            this.tbEmail.TabIndex = 25;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(28, 316);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Address:";
             // 
-            // tbAddress
+            // label4
             // 
-            this.tbAddress.Location = new System.Drawing.Point(232, 316);
-            this.tbAddress.Multiline = true;
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(611, 118);
-            this.tbAddress.TabIndex = 26;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 24);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Email:";
             // 
-            // pictureBox7
+            // label3
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(622, 124);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(44, 35);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Gendor:";
             // 
-            // dateTimePicker1
+            // label2
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(672, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(171, 26);
-            this.dateTimePicker1.TabIndex = 28;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 24);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "National No.:";
             // 
-            // label11
+            // lbPersonID
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(539, 184);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 24);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Phone:";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(622, 173);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(44, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 30;
-            this.pictureBox8.TabStop = false;
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Location = new System.Drawing.Point(672, 173);
-            this.tbPhone.Multiline = true;
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(171, 29);
-            this.tbPhone.TabIndex = 31;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(528, 235);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 24);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Country:";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(622, 224);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(44, 35);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 33;
-            this.pictureBox9.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(672, 224);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 32);
-            this.comboBox1.TabIndex = 34;
-            // 
-            // PersonImage
-            // 
-            this.PersonImage.Image = ((System.Drawing.Image)(resources.GetObject("PersonImage.Image")));
-            this.PersonImage.Location = new System.Drawing.Point(911, 124);
-            this.PersonImage.Name = "PersonImage";
-            this.PersonImage.Size = new System.Drawing.Size(171, 181);
-            this.PersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PersonImage.TabIndex = 35;
-            this.PersonImage.TabStop = false;
-            // 
-            // linkSetImage
-            // 
-            this.linkSetImage.AutoSize = true;
-            this.linkSetImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkSetImage.Location = new System.Drawing.Point(951, 331);
-            this.linkSetImage.Name = "linkSetImage";
-            this.linkSetImage.Size = new System.Drawing.Size(92, 20);
-            this.linkSetImage.TabIndex = 36;
-            this.linkSetImage.TabStop = true;
-            this.linkSetImage.Text = "Set Image";
-            // 
-            // linkRemoveImage
-            // 
-            this.linkRemoveImage.AutoSize = true;
-            this.linkRemoveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkRemoveImage.Location = new System.Drawing.Point(933, 369);
-            this.linkRemoveImage.Name = "linkRemoveImage";
-            this.linkRemoveImage.Size = new System.Drawing.Size(129, 20);
-            this.linkRemoveImage.TabIndex = 37;
-            this.linkRemoveImage.TabStop = true;
-            this.linkRemoveImage.Text = "Remove Image";
-            // 
-            // btnSave
-            // 
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.FlatAppearance.BorderSize = 3;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(706, 457);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(137, 36);
-            this.btnSave.TabIndex = 38;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnClose.FlatAppearance.BorderSize = 3;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(563, 457);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(137, 36);
-            this.btnClose.TabIndex = 39;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.lbPersonID.AutoSize = true;
+            this.lbPersonID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonID.Location = new System.Drawing.Point(166, 77);
+            this.lbPersonID.Name = "lbPersonID";
+            this.lbPersonID.Size = new System.Drawing.Size(45, 24);
+            this.lbPersonID.TabIndex = 4;
+            this.lbPersonID.Text = "N/A";
             // 
             // frmAddUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 646);
+            this.Controls.Add(this.lbPersonID);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbPersonId);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.lbAddPerson);
             this.Name = "frmAddUpdatePerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAddUpdatePerson";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,7 +774,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbAddPerson;
-        private System.Windows.Forms.Label lbPersonId;
+        private System.Windows.Forms.Label textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -575,9 +791,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbThirdName;
+        private System.Windows.Forms.TextBox tbSecondName;
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbNationalNumb;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -598,5 +814,6 @@
         private System.Windows.Forms.LinkLabel linkRemoveImage;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lbPersonID;
     }
 }
