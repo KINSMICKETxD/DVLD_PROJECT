@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DVLD_PROJECT.People.Controls
 {
-    public partial class ctrlPersonCard : UserControl
+    public partial class ctrlPersonCardWithFilter : UserControl
     {
-        public ctrlPersonCard()
+        public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
         }
 
-       
+      
     }
 }

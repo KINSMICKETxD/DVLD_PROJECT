@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD_PROJECT.People.Controls
+namespace DVLD_PROJECT.People
 {
-    public partial class ctrlPersonCard : UserControl
+    public partial class frmShowPersonInfo : Form
     {
-        public ctrlPersonCard()
+        public frmShowPersonInfo()
         {
             InitializeComponent();
         }
-
-       
     }
 }

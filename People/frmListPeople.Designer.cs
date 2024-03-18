@@ -33,17 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.PersonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SecondName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThirdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NationalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,100 +72,15 @@
             this.btnAddPerson.Size = new System.Drawing.Size(108, 72);
             this.btnAddPerson.TabIndex = 2;
             this.btnAddPerson.UseVisualStyleBackColor = true;
+            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PersonID,
-            this.FirstName,
-            this.SecondName,
-            this.ThirdName,
-            this.LastName,
-            this.Gendor,
-            this.DateOfBirth,
-            this.Nationality,
-            this.NationalNumber,
-            this.Phone,
-            this.Email});
             this.dataGridView1.Location = new System.Drawing.Point(12, 389);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1632, 391);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // PersonID
-            // 
-            this.PersonID.HeaderText = "PersonID";
-            this.PersonID.Name = "PersonID";
-            this.PersonID.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            this.FirstName.Width = 150;
-            // 
-            // SecondName
-            // 
-            this.SecondName.HeaderText = "Second Name";
-            this.SecondName.Name = "SecondName";
-            this.SecondName.ReadOnly = true;
-            this.SecondName.Width = 150;
-            // 
-            // ThirdName
-            // 
-            this.ThirdName.HeaderText = "Third Name";
-            this.ThirdName.Name = "ThirdName";
-            this.ThirdName.ReadOnly = true;
-            this.ThirdName.Width = 150;
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.Width = 150;
-            // 
-            // Gendor
-            // 
-            this.Gendor.HeaderText = "Gendor";
-            this.Gendor.Name = "Gendor";
-            this.Gendor.ReadOnly = true;
-            // 
-            // DateOfBirth
-            // 
-            this.DateOfBirth.HeaderText = "Date Of Birth";
-            this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.ReadOnly = true;
-            this.DateOfBirth.Width = 200;
-            // 
-            // Nationality
-            // 
-            this.Nationality.HeaderText = "Nationality";
-            this.Nationality.Name = "Nationality";
-            this.Nationality.ReadOnly = true;
-            // 
-            // NationalNumber
-            // 
-            this.NationalNumber.HeaderText = "National No.";
-            this.NationalNumber.Name = "NationalNumber";
-            this.NationalNumber.ReadOnly = true;
-            this.NationalNumber.Width = 150;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            this.Phone.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 200;
             // 
             // label2
             // 
@@ -257,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1669, 845);
+            this.ClientSize = new System.Drawing.Size(1667, 853);
             this.Controls.Add(this.filterOption);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -273,6 +177,7 @@
             this.Name = "frmListPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage People";
+            this.Load += new System.EventHandler(this.frmListPeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -286,17 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PersonID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SecondName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThirdName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gendor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfBirth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nationality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NationalNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
