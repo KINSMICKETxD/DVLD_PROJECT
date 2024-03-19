@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,11 +19,7 @@ namespace DVLD_PROJECT.People
 
         private eMode mode;
 
-        private string malePicPath = "C:\\Users\\KINSM\\Documents\\DVLD_PROJECT_ICONS\\Icons\\Male 512.png";
-
-        private string femalePicPath = "C:\\Users\\KINSM\\Documents\\DVLD_PROJECT_ICONS\\Icons\\Female 512.png";
-
-
+        private string imagePath;
 
 
         public frmAddUpdatePerson()
@@ -67,13 +65,13 @@ namespace DVLD_PROJECT.People
                 if(person.gendor == 0)
                 {
                     rbMale.Checked = true;
-                    PersonImage.Load(malePicPath);
+                    PersonImage.Image = Properties.Resources.Male_512;
                     rbFemale.Checked = false;
                 }
                 else
                 {
                     rbMale.Checked = false;
-                    PersonImage.Load(femalePicPath);
+                    PersonImage.Image = Properties.Resources.Female_512;
                     rbFemale.Checked = true;
                 }
 
@@ -83,24 +81,34 @@ namespace DVLD_PROJECT.People
 
                 //setting up the person picture :
 
-                if (!person.imagePath.Equals("")){
-                    PersonImage.SizeMode = PictureBoxSizeMode.Zoom;
-                    PersonImage.Load(person.imagePath);
-                }
-                
+                loadPersonImage(person.imagePath);
+
+
+
             }
             
+        }
+        private void loadPersonImage(string imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                PersonImage.SizeMode = PictureBoxSizeMode.Zoom;
+                PersonImage.Load(imagePath);
+                linkRemoveImage.Visible = true;
+            }
+
+        
         }
 
         private void rbMale_CheckedChanged(object sender, EventArgs e)
         {
             if (rbMale.Checked)
             {
-                PersonImage.Load(malePicPath);
+                PersonImage.Image = Properties.Resources.Male_512;
             }
             else
             {
-                PersonImage.Load(femalePicPath);
+                PersonImage.Image = Properties.Resources.Female_512;
             }
         }
 
@@ -110,6 +118,203 @@ namespace DVLD_PROJECT.People
             {
                 e.Handled = true;  
             }
+        }
+
+        private void tbFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbFirstName.Text))
+            {
+                e.Cancel = true;
+                tbFirstName.Focus();
+                errorProvider1.SetError(tbFirstName, "FirstName should have a value!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tbFirstName, "");
+            }
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFemale.Checked)
+            {
+                PersonImage.Image = Properties.Resources.Female_512;
+            }
+            else
+            {
+                PersonImage.Image = Properties.Resources.Male_512;
+            }
+        }
+
+        private void tbLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbLastName.Text))
+            {
+                e.Cancel = true;
+                tbLastName.Focus();
+                errorProvider1.SetError(tbLastName, "LastName should have a value");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tbLastName, "");
+            }
+        }
+
+        private void tbNationalNumb_Validating(object sender, CancelEventArgs e)
+        {
+            if(clsPerson.IsPersonExist(tbNationalNumb.Text) && mode==eMode.addnew)
+            {
+                e.Cancel= true;
+                tbNationalNumb.Focus();
+                errorProvider1.SetError(tbNationalNumb, "National Number is used for another person!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tbNationalNumb, "");
+            }
+            if (string.IsNullOrWhiteSpace(tbNationalNumb.Text))
+            {
+                e.Cancel = true;
+                tbNationalNumb.Focus();
+                errorProvider1.SetError(tbNationalNumb, "National number is required !");
+            }
+
+        }
+
+
+
+        private bool isEmailValid(string email)
+        {
+
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+
+            Match match = Regex.Match(email, pattern);
+
+
+            return match.Success;
+        }
+
+        private void tbEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!isEmailValid(tbEmail.Text))
+            {
+                e.Cancel = true;
+                tbEmail.Focus();
+                errorProvider1.SetError(tbEmail, "Please enter a valid email!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tbEmail, "");
+            }
+        }
+
+        private void tbAddress_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbAddress.Text))
+            {
+                e.Cancel = true;
+                tbAddress.Focus();
+                errorProvider1.SetError(tbAddress, "Address is required !");
+            }
+        }
+
+        private void linkRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if(MessageBox.Show("Are you sure you want to delete this image","delete Image",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (rbFemale.Checked)
+                {
+                    PersonImage.Image = Properties.Resources.Female_512;
+                }
+                else
+                {
+                    PersonImage.Image = Properties.Resources.Male_512;
+                }
+                linkRemoveImage.Visible = false;
+            }
+
+        }
+
+        private void linkSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            openFileDialog1.InitialDirectory = @"c:\";
+
+            openFileDialog1.Title = "Open";
+
+            openFileDialog1.DefaultExt = "png";
+
+            openFileDialog1.Filter = "Image Files (*.png)|*.png";
+
+            openFileDialog1.FilterIndex = 0;
+
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                imagePath = openFileDialog1.FileName;
+                try
+                {
+                    PersonImage.Load(openFileDialog1.FileName);
+                    linkRemoveImage.Visible = true;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error occurs while loading the image !","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            clsPerson person = clsPerson.find(int.Parse(lbPersonID.Text));
+            person.nationalNumber = tbNationalNumb.Text;
+            person.firstName = tbFirstName.Text;
+            person.secondName = tbSecondName.Text;
+            person.thirdName = tbThirdName.Text;
+            person.lastName = tbLastName.Text;
+
+            if (rbMale.Checked)
+            {
+                person.gendor = 0;
+            }
+            else
+            {
+                person.gendor = 1;
+            }
+            person.email = tbEmail.Text;
+            person.addresse = tbAddress.Text;
+
+            person.dateOfBirth = dateTimePicker1.Value;
+            person.phoneNumber = tbPhone.Text;
+            person.nationalityCountryID = comboBox1.SelectedIndex;
+            copyPersonImage();
+
+            person.savePerson();
+        }
+
+        private void copyPersonImage()
+        {
+            if(linkRemoveImage.Visible)
+            {
+                string sourcePath = imagePath;
+                string destinationPath = @"C:\DVLD_PEOPLE_IMAGES\" + Guid.NewGuid().ToString() + ".png";
+
+                try
+                {
+                    File.Copy(sourcePath, destinationPath);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Error occurs while copying image", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
         }
     }
 }

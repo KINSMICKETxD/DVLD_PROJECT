@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdatePerson));
             this.lbAddPerson = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.Label();
@@ -71,6 +72,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbPersonID = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -82,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbAddPerson
@@ -188,17 +192,20 @@
             this.btnSave.TabIndex = 38;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // linkRemoveImage
             // 
             this.linkRemoveImage.AutoSize = true;
             this.linkRemoveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkRemoveImage.Location = new System.Drawing.Point(933, 369);
+            this.linkRemoveImage.Location = new System.Drawing.Point(934, 368);
             this.linkRemoveImage.Name = "linkRemoveImage";
             this.linkRemoveImage.Size = new System.Drawing.Size(129, 20);
             this.linkRemoveImage.TabIndex = 37;
             this.linkRemoveImage.TabStop = true;
             this.linkRemoveImage.Text = "Remove Image";
+            this.linkRemoveImage.Visible = false;
+            this.linkRemoveImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRemoveImage_LinkClicked);
             // 
             // linkSetImage
             // 
@@ -210,10 +217,11 @@
             this.linkSetImage.TabIndex = 36;
             this.linkSetImage.TabStop = true;
             this.linkSetImage.Text = "Set Image";
+            this.linkSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetImage_LinkClicked);
             // 
             // PersonImage
             // 
-            this.PersonImage.Image = ((System.Drawing.Image)(resources.GetObject("PersonImage.Image")));
+            this.PersonImage.Image = global::DVLD_PROJECT.Properties.Resources.Male_512;
             this.PersonImage.Location = new System.Drawing.Point(911, 124);
             this.PersonImage.Name = "PersonImage";
             this.PersonImage.Size = new System.Drawing.Size(171, 181);
@@ -502,6 +510,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(611, 118);
             this.tbAddress.TabIndex = 26;
+            this.tbAddress.Validating += new System.ComponentModel.CancelEventHandler(this.tbAddress_Validating);
             // 
             // tbEmail
             // 
@@ -511,6 +520,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(171, 29);
             this.tbEmail.TabIndex = 25;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
             // 
             // rbFemale
             // 
@@ -523,6 +533,7 @@
             this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
             // 
             // pictureBox6
             // 
@@ -555,6 +566,7 @@
             this.tbNationalNumb.Name = "tbNationalNumb";
             this.tbNationalNumb.Size = new System.Drawing.Size(171, 29);
             this.tbNationalNumb.TabIndex = 21;
+            this.tbNationalNumb.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNumb_Validating);
             // 
             // label10
             // 
@@ -604,6 +616,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(171, 29);
             this.tbLastName.TabIndex = 16;
+            this.tbLastName.Validating += new System.ComponentModel.CancelEventHandler(this.tbLastName_Validating);
             // 
             // tbThirdName
             // 
@@ -631,6 +644,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(171, 29);
             this.tbFirstName.TabIndex = 13;
+            this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirstName_Validating);
             // 
             // pictureBox5
             // 
@@ -742,6 +756,14 @@
             this.lbPersonID.TabIndex = 4;
             this.lbPersonID.Text = "N/A";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmAddUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +788,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,5 +838,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lbPersonID;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
