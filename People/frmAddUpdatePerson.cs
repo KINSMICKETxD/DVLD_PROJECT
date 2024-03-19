@@ -21,6 +21,8 @@ namespace DVLD_PROJECT.People
 
         private string imagePath;
 
+        private string oldImagePath;
+
 
         public frmAddUpdatePerson()
         {
@@ -88,14 +90,30 @@ namespace DVLD_PROJECT.People
             }
             
         }
-        private void loadPersonImage(string imagePath)
+        private void loadPersonImage(string imagePath)  
         {
+            PersonImage.SizeMode = PictureBoxSizeMode.Zoom;
+
             if (!string.IsNullOrEmpty(imagePath))
             {
-                PersonImage.SizeMode = PictureBoxSizeMode.Zoom;
-                PersonImage.Load(imagePath);
-                linkRemoveImage.Visible = true;
+                try
+                {
+                    PersonImage.Load(imagePath);
+                    linkRemoveImage.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    if (rbMale.Checked)
+                    {
+                        PersonImage.Image = Properties.Resources.Male_512;
+                    }
+                    else
+                    {
+                        PersonImage.Image = Properties.Resources.Female_512;
+                    }
+                }
             }
+            
 
         
         }
@@ -274,6 +292,7 @@ namespace DVLD_PROJECT.People
         private void btnSave_Click(object sender, EventArgs e)
         {
             clsPerson person = clsPerson.find(int.Parse(lbPersonID.Text));
+            oldImagePath = person.imagePath;
             person.nationalNumber = tbNationalNumb.Text;
             person.firstName = tbFirstName.Text;
             person.secondName = tbSecondName.Text;
@@ -295,7 +314,7 @@ namespace DVLD_PROJECT.People
             person.phoneNumber = tbPhone.Text;
             person.nationalityCountryID = comboBox1.SelectedIndex;
             copyPersonImage();
-
+            person.imagePath = imagePath;
             person.savePerson();
         }
 
@@ -303,18 +322,36 @@ namespace DVLD_PROJECT.People
         {
             if(linkRemoveImage.Visible)
             {
+                try
+                {
+                    File.Delete(oldImagePath);
+                }catch (Exception)
+                {
+                    
+
+                }
                 string sourcePath = imagePath;
                 string destinationPath = @"C:\DVLD_PEOPLE_IMAGES\" + Guid.NewGuid().ToString() + ".png";
-
                 try
                 {
                     File.Copy(sourcePath, destinationPath);
+                    imagePath = destinationPath;
                 }catch(Exception ex)
                 {
                     MessageBox.Show("Error occurs while copying image", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                try
+                {
+                    File.Delete(oldImagePath);
+
+                }catch ( Exception ex ) { }
+            }
             
         }
+
+      
     }
 }
