@@ -34,8 +34,7 @@ namespace DVLD_PROJECT.People
         public frmAddUpdatePerson(int personId)
         {
             InitializeComponent();
-            initiateDateTime();
-            loadPersonInfo(personId);
+            loadPersonInfoToTheForm(personId);
             mode = eMode.update;
             lbAddPerson.Text = "Update Person";
         }
@@ -48,7 +47,7 @@ namespace DVLD_PROJECT.People
             dateTimePicker1.MaxDate = new DateTime(validYear, currentMonth, currentDay);
         }
 
-        private void loadPersonInfo(int personId)
+        private void loadPersonInfoToTheForm(int personId)
         {
             clsPerson person = clsPerson.find(personId);
             if(person != null)
@@ -77,7 +76,7 @@ namespace DVLD_PROJECT.People
                     rbFemale.Checked = true;
                 }
 
-                comboBox1.SelectedIndex = 90-1;
+                comboBox1.SelectedIndex = person.nationalityCountryID;
 
                 dateTimePicker1.Value = person.dateOfBirth;
 
@@ -292,8 +291,38 @@ namespace DVLD_PROJECT.People
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsPerson person = clsPerson.find(int.Parse(lbPersonID.Text));
+            clsPerson person;
+            if (mode == eMode.update)
+            {
+               person  = clsPerson.find(int.Parse(lbPersonID.Text));
+                
+            }
+            else
+            {
+                
+               person = new clsPerson();
+            }
             oldImagePath = person.imagePath;
+
+            loadPersonInfoFromTheForm(person);
+
+
+            if (person.savePerson())
+            {
+                loadPersonInfoToTheForm(person.personId);
+                mode = eMode.update;
+                lbAddPerson.Text = "Update Person";
+                MessageBox.Show("Person Saved successfully !","Success Message",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error occurs while saving the Person !","Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void loadPersonInfoFromTheForm(clsPerson person)
+        {
             person.nationalNumber = tbNationalNumb.Text;
             person.firstName = tbFirstName.Text;
             person.secondName = tbSecondName.Text;
@@ -314,12 +343,15 @@ namespace DVLD_PROJECT.People
             person.dateOfBirth = dateTimePicker1.Value;
             person.phoneNumber = tbPhone.Text;
             person.nationalityCountryID = comboBox1.SelectedIndex;
-            copyPersonImage();
-            person.imagePath = imagePath;
-            person.savePerson();
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                person.imagePath = imagePath;
+            }
+            copyPersonImage(person.imagePath);
         }
 
-        private void copyPersonImage()
+
+        private void copyPersonImage(string imagePath)
         {
             if(linkRemoveImage.Visible && !imagePath.Equals(oldImagePath))
             {
@@ -342,7 +374,7 @@ namespace DVLD_PROJECT.People
                     MessageBox.Show("Error occurs while copying image", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (linkRemoveImage.Visible == false)
+            else
             {
                 try
                 {
@@ -355,6 +387,19 @@ namespace DVLD_PROJECT.People
             
         }
 
-      
+        private void tbPhone_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbPhone.Text))
+            {
+                e.Cancel = true;
+                tbPhone.Focus();
+                errorProvider1.SetError(tbPhone, "Phone number is required");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(tbPhone, "");
+            }
+        }
     }
 }

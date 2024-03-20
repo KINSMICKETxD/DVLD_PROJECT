@@ -462,6 +462,7 @@
             this.tbPhone.Size = new System.Drawing.Size(171, 29);
             this.tbPhone.TabIndex = 31;
             this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.tbPhone_Validating);
             // 
             // pictureBox8
             // 
