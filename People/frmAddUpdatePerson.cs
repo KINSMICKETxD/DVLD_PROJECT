@@ -256,6 +256,7 @@ namespace DVLD_PROJECT.People
                     PersonImage.Image = Properties.Resources.Male_512;
                 }
                 linkRemoveImage.Visible = false;
+                imagePath = null;
             }
 
         }
@@ -320,7 +321,7 @@ namespace DVLD_PROJECT.People
 
         private void copyPersonImage()
         {
-            if(linkRemoveImage.Visible)
+            if(linkRemoveImage.Visible && !imagePath.Equals(oldImagePath))
             {
                 try
                 {
@@ -341,13 +342,15 @@ namespace DVLD_PROJECT.People
                     MessageBox.Show("Error occurs while copying image", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else if (linkRemoveImage.Visible == false)
             {
                 try
                 {
                     File.Delete(oldImagePath);
+                }catch (Exception ex)
+                {
 
-                }catch ( Exception ex ) { }
+                }
             }
             
         }
