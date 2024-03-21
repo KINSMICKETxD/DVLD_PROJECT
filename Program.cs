@@ -17,7 +17,7 @@ namespace DVLD_PROJECT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdatePerson(1045));
+            Application.Run(new frmShowPersonInfo("1238432"));
 
 
         }

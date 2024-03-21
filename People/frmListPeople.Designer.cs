@@ -32,21 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListPeople));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmShowDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDeletePerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.filterOption = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tsmShowDetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmDeletePerson = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +73,62 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1632, 391);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmShowDetails,
+            this.toolStripMenuItem1,
+            this.tsmAddNewPerson,
+            this.tsmEdit,
+            this.tsmDeletePerson,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(240, 190);
+            // 
+            // tsmShowDetails
+            // 
+            this.tsmShowDetails.Image = global::DVLD_PROJECT.Properties.Resources.PersonDetails_32;
+            this.tsmShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmShowDetails.Name = "tsmShowDetails";
+            this.tsmShowDetails.Size = new System.Drawing.Size(239, 38);
+            this.tsmShowDetails.Text = "Show Details";
+            this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(236, 6);
+            // 
+            // tsmAddNewPerson
+            // 
+            this.tsmAddNewPerson.Image = global::DVLD_PROJECT.Properties.Resources.AddPerson_32;
+            this.tsmAddNewPerson.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmAddNewPerson.Name = "tsmAddNewPerson";
+            this.tsmAddNewPerson.Size = new System.Drawing.Size(239, 38);
+            this.tsmAddNewPerson.Text = "Add New Person";
+            // 
+            // tsmEdit
+            // 
+            this.tsmEdit.Image = global::DVLD_PROJECT.Properties.Resources.edit_32;
+            this.tsmEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmEdit.Name = "tsmEdit";
+            this.tsmEdit.Size = new System.Drawing.Size(239, 38);
+            this.tsmEdit.Text = "Edit";
+            // 
+            // tsmDeletePerson
+            // 
+            this.tsmDeletePerson.Image = global::DVLD_PROJECT.Properties.Resources.Delete_32;
+            this.tsmDeletePerson.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmDeletePerson.Name = "tsmDeletePerson";
+            this.tsmDeletePerson.Size = new System.Drawing.Size(239, 38);
+            this.tsmDeletePerson.Text = "Delete";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 6);
             // 
             // label2
             // 
@@ -137,29 +193,6 @@
             this.filterOption.TabIndex = 9;
             this.filterOption.Visible = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmShowDetails,
-            this.toolStripMenuItem1,
-            this.tsmAddNewPerson,
-            this.tsmEdit,
-            this.tsmDeletePerson,
-            this.toolStripMenuItem2});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(240, 168);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 6);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(236, 6);
-            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -193,38 +226,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // tsmShowDetails
-            // 
-            this.tsmShowDetails.Image = global::DVLD_PROJECT.Properties.Resources.PersonDetails_32;
-            this.tsmShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(239, 38);
-            this.tsmShowDetails.Text = "Show Details";
-            // 
-            // tsmAddNewPerson
-            // 
-            this.tsmAddNewPerson.Image = global::DVLD_PROJECT.Properties.Resources.AddPerson_32;
-            this.tsmAddNewPerson.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmAddNewPerson.Name = "tsmAddNewPerson";
-            this.tsmAddNewPerson.Size = new System.Drawing.Size(239, 38);
-            this.tsmAddNewPerson.Text = "Add New Person";
-            // 
-            // tsmEdit
-            // 
-            this.tsmEdit.Image = global::DVLD_PROJECT.Properties.Resources.edit_32;
-            this.tsmEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmEdit.Name = "tsmEdit";
-            this.tsmEdit.Size = new System.Drawing.Size(239, 38);
-            this.tsmEdit.Text = "Edit";
-            // 
-            // tsmDeletePerson
-            // 
-            this.tsmDeletePerson.Image = global::DVLD_PROJECT.Properties.Resources.Delete_32;
-            this.tsmDeletePerson.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsmDeletePerson.Name = "tsmDeletePerson";
-            this.tsmDeletePerson.Size = new System.Drawing.Size(239, 38);
-            this.tsmDeletePerson.Text = "Delete";
             // 
             // frmListPeople
             // 

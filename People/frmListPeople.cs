@@ -84,5 +84,14 @@ namespace DVLD_PROJECT.People
             }
             
         }
+
+        private void tsmShowDetails_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                string nationalNumber = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+            }
+        }
     }
 }

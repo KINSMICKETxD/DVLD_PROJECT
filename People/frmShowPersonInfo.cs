@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_PROJECT.People.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,18 @@ namespace DVLD_PROJECT.People
         {
             InitializeComponent();
         }
+
+        public frmShowPersonInfo(string nationalNumber)
+        {
+            InitializeComponent();
+            ctrlPersonCard1.loadPersonDataToControl(nationalNumber);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }
