@@ -198,6 +198,7 @@
             this.filterOption.TabIndex = 9;
             this.filterOption.Visible = false;
             this.filterOption.TextChanged += new System.EventHandler(this.filterOption_TextChanged);
+            this.filterOption.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filterOption_KeyPress);
             // 
             // button1
             // 

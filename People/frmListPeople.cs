@@ -30,12 +30,19 @@ namespace DVLD_PROJECT.People
             
                 filterOption.Visible = true;
             }
+            else
+            {
+                filterOption.Text = "";
+                loadDataToGridView();
+                filterOption.Visible = false;
+            }
         }
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frmAddUpdatePerson = new frmAddUpdatePerson();
             frmAddUpdatePerson.ShowDialog();
+            loadDataToGridView();
         }
 
       
@@ -146,38 +153,48 @@ namespace DVLD_PROJECT.People
 
                 case "National No":
 
+                    filterByStringOption(filterOption.Text,"NationalNo");
                     break;
 
                 case "First Name":
 
+                    filterByStringOption(filterOption.Text, "FirstName");
                     break;
 
                 case "Second Name":
 
+                    filterByStringOption(filterOption.Text, "SecondName");
                     break;
 
                 case "Third Name":
+
+                    filterByStringOption(filterOption.Text, "ThirdName");
 
                     break;
 
                 case "Last Name":
 
+                    filterByStringOption(filterOption.Text, "LastName");
                     break;
 
                 case "Nationality":
 
+                    filterByStringOption(filterOption.Text, "Nationality");
                     break;
 
                 case "Gendor":
 
+                    filterByStringOption(filterOption.Text, "Gendor");
                     break;
 
                 case "Phone":
 
+                    filterByStringOption(filterOption.Text, "Phone");
                     break;
 
                 case "Email":
 
+                    filterByStringOption(filterOption.Text, "Email");
                     break;
 
                 default:
@@ -190,19 +207,47 @@ namespace DVLD_PROJECT.People
 
         private void filterByPersonID(string personID)
         {
+            if (!string.IsNullOrEmpty(personID))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
 
-            DataTable dt = (DataTable)dataGridView1.DataSource;
+                bs.Filter = "personID = " + personID;
 
-            DataView dv = new DataView(dt);
-
-            string filter = "PersonID = "+personID;
-
-            dv.RowFilter = filter;
-
-            dataGridView1.DataSource = dv;
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadDataToGridView();
+            }
+           
             
         }
 
-       
+        private void filterByStringOption(string nationalNumber,string filterOption)
+        {
+            if(!string.IsNullOrEmpty(nationalNumber))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+
+                bs.Filter = $"{filterOption} like '%{nationalNumber}%'";
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadDataToGridView();
+            }
+            
+        }
+
+
+        private void filterOption_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 1 && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
