@@ -16,7 +16,7 @@ namespace DVLD_PROJECT.People
         {
             InitializeComponent();
             loadDataToGridView();
-            label4.Text = (dataGridView1.RowCount-1).ToString();
+            label4.Text = (dataGridView1.RowCount).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -134,5 +134,75 @@ namespace DVLD_PROJECT.People
             }
             loadDataToGridView();
         }
+
+        private void filterOption_TextChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.Text)
+            {
+                case "Person ID":
+
+                    filterByPersonID(filterOption.Text);
+                    break;
+
+                case "National No":
+
+                    break;
+
+                case "First Name":
+
+                    break;
+
+                case "Second Name":
+
+                    break;
+
+                case "Third Name":
+
+                    break;
+
+                case "Last Name":
+
+                    break;
+
+                case "Nationality":
+
+                    break;
+
+                case "Gendor":
+
+                    break;
+
+                case "Phone":
+
+                    break;
+
+                case "Email":
+
+                    break;
+
+                default:
+
+                    break;
+
+            }
+        }
+
+
+        private void filterByPersonID(string personID)
+        {
+
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+
+            DataView dv = new DataView(dt);
+
+            string filter = "PersonID = "+personID;
+
+            dv.RowFilter = filter;
+
+            dataGridView1.DataSource = dv;
+            
+        }
+
+       
     }
 }

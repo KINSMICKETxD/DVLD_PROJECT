@@ -65,6 +65,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 389);
@@ -85,7 +87,7 @@
             this.tsmDeletePerson,
             this.toolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(240, 190);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(240, 168);
             // 
             // tsmShowDetails
             // 
@@ -152,7 +154,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "None",
             "Person ID",
-            "National No.",
+            "National No",
             "First Name",
             "Second Name",
             "Third Name",
@@ -195,6 +197,7 @@
             this.filterOption.Size = new System.Drawing.Size(185, 26);
             this.filterOption.TabIndex = 9;
             this.filterOption.Visible = false;
+            this.filterOption.TextChanged += new System.EventHandler(this.filterOption_TextChanged);
             // 
             // button1
             // 
