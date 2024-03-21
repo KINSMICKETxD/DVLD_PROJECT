@@ -38,10 +38,7 @@ namespace DVLD_PROJECT.People
             frmAddUpdatePerson.ShowDialog();
         }
 
-        private void frmListPeople_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void loadDataToGridView()
         {

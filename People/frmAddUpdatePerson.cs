@@ -76,7 +76,7 @@ namespace DVLD_PROJECT.People
                     rbFemale.Checked = true;
                 }
 
-                comboBox1.SelectedIndex = person.nationalityCountryID;
+                comboBox1.SelectedIndex = person.nationalityCountryID-1;
 
                 dateTimePicker1.Value = person.dateOfBirth;
 
@@ -201,8 +201,6 @@ namespace DVLD_PROJECT.People
 
         }
 
-
-
         private bool isEmailValid(string email)
         {
 
@@ -302,7 +300,6 @@ namespace DVLD_PROJECT.People
                 
                person = new clsPerson();
             }
-            oldImagePath = person.imagePath;
 
             loadPersonInfoFromTheForm(person);
 
@@ -342,49 +339,43 @@ namespace DVLD_PROJECT.People
 
             person.dateOfBirth = dateTimePicker1.Value;
             person.phoneNumber = tbPhone.Text;
-            person.nationalityCountryID = comboBox1.SelectedIndex;
-            if (!string.IsNullOrEmpty(imagePath))
-            {
-                person.imagePath = imagePath;
-            }
-            copyPersonImage(person.imagePath);
+            person.nationalityCountryID = comboBox1.SelectedIndex+1;
+
+            CopyAndPasteNewImage(person);
         }
 
-
-        private void copyPersonImage(string imagePath)
+        private void CopyAndPasteNewImage(clsPerson person)
         {
-            if(linkRemoveImage.Visible && !imagePath.Equals(oldImagePath))
+
+            if (linkRemoveImage.Visible && imagePath != null)
+            {
+                if(person.imagePath != null)
+                {
+                    try
+                    {
+                        File.Delete(person.imagePath);
+                        
+                    }catch (Exception) { }
+                }
+                try
+                {
+                    string destination = @"C:\DVLD_PEOPLE_IMAGES\" + Guid.NewGuid().ToString() + ".png";
+                    File.Copy(imagePath, destination);
+                    person.imagePath = destination;
+                }
+                catch (Exception ex) { }
+            }
+            if (linkRemoveImage.Visible == false)
             {
                 try
                 {
-                    File.Delete(oldImagePath);
-                }catch (Exception)
-                {
-                    
-
+                    File.Delete(person.imagePath);
                 }
-                string sourcePath = imagePath;
-                string destinationPath = @"C:\DVLD_PEOPLE_IMAGES\" + Guid.NewGuid().ToString() + ".png";
-                try
-                {
-                    File.Copy(sourcePath, destinationPath);
-                    imagePath = destinationPath;
-                }catch(Exception ex)
-                {
-                    MessageBox.Show("Error occurs while copying image", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                catch (Exception) { }
+                person.imagePath = null;
             }
-            else
-            {
-                try
-                {
-                    File.Delete(oldImagePath);
-                }catch (Exception ex)
-                {
 
-                }
-            }
-            
+
         }
 
         private void tbPhone_Validating(object sender, CancelEventArgs e)

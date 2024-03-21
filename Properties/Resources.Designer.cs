@@ -73,6 +73,16 @@ namespace DVLD_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddPerson_32 {
+            get {
+                object obj = ResourceManager.GetObject("AddPerson 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Application_Types_64 {
             get {
                 object obj = ResourceManager.GetObject("Application Types 64", resourceCulture);
@@ -106,6 +116,16 @@ namespace DVLD_PROJECT.Properties {
         internal static System.Drawing.Bitmap Damaged_Driving_License_32 {
             get {
                 object obj = ResourceManager.GetObject("Damaged Driving License 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_32 {
+            get {
+                object obj = ResourceManager.GetObject("Delete 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,16 @@ namespace DVLD_PROJECT.Properties {
         internal static System.Drawing.Bitmap Drivers_64 {
             get {
                 object obj = ResourceManager.GetObject("Drivers 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_32 {
+            get {
+                object obj = ResourceManager.GetObject("edit 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +276,16 @@ namespace DVLD_PROJECT.Properties {
         internal static System.Drawing.Bitmap People_64 {
             get {
                 object obj = ResourceManager.GetObject("People 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PersonDetails_32 {
+            get {
+                object obj = ResourceManager.GetObject("PersonDetails 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
