@@ -13,6 +13,8 @@ namespace DVLD_PROJECT.People.Controls
 {
     public partial class ctrlPersonCard : UserControl
     {
+
+        private clsPerson person;
         public ctrlPersonCard()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace DVLD_PROJECT.People.Controls
 
         public void loadPersonDataToControl(string nationalNumber)
         {
-            clsPerson person = clsPerson.findByNationalNumb(nationalNumber);
+            person = clsPerson.findByNationalNumb(nationalNumber);
             lbPersonId.Text = person.personId.ToString();
             lbName.Text = person.firstName + " " + person.lastName;
             lbNationalNum.Text = person.nationalNumber.ToString();
@@ -40,7 +42,7 @@ namespace DVLD_PROJECT.People.Controls
             }
             lbEmail.Text = person.email;
             lbAddress.Text = person.addresse;
-            lbDateOfBirth.Text = person.dateOfBirth.ToString();
+            lbDateOfBirth.Text = person.dateOfBirth.ToShortDateString();
             lbPhone.Text = person.phoneNumber;
             lbCountry.Text = person.countryName;
             loadImage(person.imagePath);
@@ -81,7 +83,7 @@ namespace DVLD_PROJECT.People.Controls
             {
                 frmAddUpdatePerson frmAddUpdatePerson = new frmAddUpdatePerson(personId);
                 frmAddUpdatePerson.ShowDialog();
-                this.Refresh();
+                loadPersonDataToControl(person.nationalNumber);
             }
             
         }

@@ -108,6 +108,7 @@
             this.tsmAddNewPerson.Name = "tsmAddNewPerson";
             this.tsmAddNewPerson.Size = new System.Drawing.Size(239, 38);
             this.tsmAddNewPerson.Text = "Add New Person";
+            this.tsmAddNewPerson.Click += new System.EventHandler(this.tsmAddNewPerson_Click);
             // 
             // tsmEdit
             // 
@@ -116,6 +117,7 @@
             this.tsmEdit.Name = "tsmEdit";
             this.tsmEdit.Size = new System.Drawing.Size(239, 38);
             this.tsmEdit.Text = "Edit";
+            this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
             // 
             // tsmDeletePerson
             // 
@@ -124,6 +126,7 @@
             this.tsmDeletePerson.Name = "tsmDeletePerson";
             this.tsmDeletePerson.Size = new System.Drawing.Size(239, 38);
             this.tsmDeletePerson.Text = "Delete";
+            this.tsmDeletePerson.Click += new System.EventHandler(this.tsmDeletePerson_Click);
             // 
             // toolStripMenuItem2
             // 

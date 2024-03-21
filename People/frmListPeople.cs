@@ -90,8 +90,49 @@ namespace DVLD_PROJECT.People
             if(dataGridView1.SelectedRows.Count > 0)
             {
                 string nationalNumber = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-
+                frmShowPersonInfo frmShowPersonInfo = new frmShowPersonInfo(nationalNumber);
+                frmShowPersonInfo.ShowDialog();
             }
+        }
+
+        private void tsmAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frmAddUpdatePerson = new frmAddUpdatePerson();
+            frmAddUpdatePerson.ShowDialog();
+            loadDataToGridView();
+        }
+
+        private void tsmEdit_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                string strpersonID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                int.TryParse(strpersonID, out int personID);
+                frmAddUpdatePerson frmAddUpdatePerson = new frmAddUpdatePerson(personID);
+                frmAddUpdatePerson.ShowDialog();
+                loadDataToGridView();
+            }
+            
+        }
+
+        private void tsmDeletePerson_Click(object sender, EventArgs e)
+        {
+            string strpersonID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            int.TryParse(strpersonID, out int personID);
+
+            if (MessageBox.Show("Are you sure you want to delete this Person ?","Confirm Delete",
+                MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (clsPerson.deletePersonById(personID))
+                {
+                    MessageBox.Show("Person Deleted Successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Person was not deleted because it has data linked to it","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            loadDataToGridView();
         }
     }
 }
