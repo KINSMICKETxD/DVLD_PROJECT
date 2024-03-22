@@ -13,9 +13,12 @@ namespace DVLD_PROJECT
 {
     public partial class frmLogin : Form
     {
+
+        private string filePath = "rememberMe.txt";
         public frmLogin()
         {
             InitializeComponent();
+            loadUserInfoFromFile(filePath);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace DVLD_PROJECT
                 if (clsUser.IsUserAuthenticated(tbUserName.Text, tbPassword.Text))
                 {
                     MessageBox.Show("User is Authenticated !");
-                    RememberTheUser(tbUserName.Text);
+                    RememberTheUser();
 
                 }
                 errorProvider1.SetError(tbUserName, "");
@@ -48,34 +51,51 @@ namespace DVLD_PROJECT
 
             }   
         }
-        private void RememberTheUser(string username)
+        private void RememberTheUser()
         {
-            string filePath = username;
+            string filePath = "rememberMe.txt";
 
-            if(!File.Exists(filePath))
+            if (!cbRememberMe.Checked)
             {
-                try
-                {
-                    using (StreamWriter writer = new StreamWriter(filePath))
+                return;
+            }   
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
                     {
-                        writer.WriteLine(tbUserName);
-                        writer.WriteLine(tbPassword);
+                        writer.WriteLine(tbUserName.Text);
+                        writer.WriteLine(tbPassword.Text);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Occurs while Saving the user info");
+                MessageBox.Show("Error Occurs while Saving the user info");
                 }
             }
-            
-        }
 
         private void loadUserInfoFromFile(string filePath)
         {
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    tbUserName.Text = reader.ReadLine();
+                    tbPassword.Text = reader.ReadLine();
+                    cbRememberMe.Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
-        
 
-     
+        private void cbRememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!cbRememberMe.Checked) {
+                File.Delete("rememberMe.txt");
+            
+            }
+        }
     }
 }

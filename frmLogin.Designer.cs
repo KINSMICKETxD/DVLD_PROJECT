@@ -146,6 +146,7 @@
             this.cbRememberMe.TabIndex = 12;
             this.cbRememberMe.Text = "Remember Me";
             this.cbRememberMe.UseVisualStyleBackColor = true;
+            this.cbRememberMe.CheckedChanged += new System.EventHandler(this.cbRememberMe_CheckedChanged);
             // 
             // btnLogin
             // 
