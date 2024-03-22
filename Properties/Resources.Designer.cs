@@ -113,6 +113,16 @@ namespace DVLD_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closeBlack32 {
+            get {
+                object obj = ResourceManager.GetObject("closeBlack32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Damaged_Driving_License_32 {
             get {
                 object obj = ResourceManager.GetObject("Damaged Driving License 32", resourceCulture);
@@ -273,9 +283,29 @@ namespace DVLD_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Number_32 {
+            get {
+                object obj = ResourceManager.GetObject("Number 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap People_64 {
             get {
                 object obj = ResourceManager.GetObject("People 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Person_32 {
+            get {
+                object obj = ResourceManager.GetObject("Person 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +336,16 @@ namespace DVLD_PROJECT.Properties {
         internal static System.Drawing.Bitmap Retake_Test_32 {
             get {
                 object obj = ResourceManager.GetObject("Retake Test 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sign_in_32 {
+            get {
+                object obj = ResourceManager.GetObject("sign_in 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
