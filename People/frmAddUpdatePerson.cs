@@ -392,5 +392,10 @@ namespace DVLD_PROJECT.People
                 errorProvider1.SetError(tbPhone, "");
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

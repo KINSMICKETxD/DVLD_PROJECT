@@ -53,7 +53,7 @@ namespace DVLD_PROJECT.People
             DataTable dt = clsPerson.getPeople();
 
             dataGridView1.DataSource = dt;
-
+            label4.Text = dataGridView1.RowCount.ToString();
             if(dataGridView1.Rows.Count>0 )
             {
                 dataGridView1.Columns[0].HeaderText = "Person ID";
@@ -215,6 +215,7 @@ namespace DVLD_PROJECT.People
                 bs.Filter = "personID = " + personID;
 
                 dataGridView1.DataSource = bs;
+                label4.Text = dataGridView1.RowCount.ToString();
             }
             else
             {
@@ -233,6 +234,7 @@ namespace DVLD_PROJECT.People
 
                 bs.Filter = $"{filterOption} like '%{nationalNumber}%'";
                 dataGridView1.DataSource = bs;
+                label4.Text = dataGridView1.RowCount.ToString();
             }
             else
             {
