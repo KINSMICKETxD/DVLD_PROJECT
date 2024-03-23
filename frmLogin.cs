@@ -14,11 +14,14 @@ namespace DVLD_PROJECT
     public partial class frmLogin : Form
     {
 
+        public bool isUserAuthenticated { get; private set; }
+
         private string filePath = "rememberMe.txt";
         public frmLogin()
         {
             InitializeComponent();
             loadUserInfoFromFile(filePath);
+            isUserAuthenticated = false;
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -41,9 +44,9 @@ namespace DVLD_PROJECT
             {
                 if (clsUser.IsUserAuthenticated(tbUserName.Text, tbPassword.Text))
                 {
-                    MessageBox.Show("User is Authenticated !");
                     RememberTheUser();
-
+                    isUserAuthenticated = true;
+                    this.Close();
                 }
                 errorProvider1.SetError(tbUserName, "");
                 errorProvider1.SetError(tbPassword, "");

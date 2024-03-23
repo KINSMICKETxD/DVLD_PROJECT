@@ -1,4 +1,5 @@
 ﻿using DVLD_PROJECT.People;
+using DVLD_PROJECT.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,26 @@ namespace DVLD_PROJECT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            //callLoginForm(new frmLogin());
+            Application.Run(new frmListUsers());
 
+        }
 
+        private static void callLoginForm(frmLogin frmLogin)
+        {
+            Application.Run(frmLogin);
+            if(frmLogin.isUserAuthenticated)
+            {
+                callMainForm(new frmMain());
+            }
+        } 
+        private static void callMainForm(frmMain frmMain)
+        {
+            Application.Run(frmMain);
+            if (frmMain.isSignOut)
+            {
+                callLoginForm(new frmLogin());
+            }
         }
     }
 }
