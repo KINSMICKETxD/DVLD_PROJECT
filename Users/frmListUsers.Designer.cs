@@ -34,6 +34,10 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbFilterOptions = new System.Windows.Forms.ComboBox();
+            this.lbFilterText = new System.Windows.Forms.TextBox();
+            this.cbIsActiveFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,11 +98,69 @@
             this.btnClose.Text = "     Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 364);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Filter By:";
+            // 
+            // cbFilterOptions
+            // 
+            this.cbFilterOptions.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbFilterOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilterOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilterOptions.FormattingEnabled = true;
+            this.cbFilterOptions.Items.AddRange(new object[] {
+            "None",
+            "User ID",
+            "Person ID",
+            "FullName",
+            "UserName",
+            "isActive"});
+            this.cbFilterOptions.Location = new System.Drawing.Point(118, 364);
+            this.cbFilterOptions.Name = "cbFilterOptions";
+            this.cbFilterOptions.Size = new System.Drawing.Size(220, 28);
+            this.cbFilterOptions.TabIndex = 10;
+            this.cbFilterOptions.SelectedIndexChanged += new System.EventHandler(this.cbFilterOptions_SelectedIndexChanged);
+            // 
+            // lbFilterText
+            // 
+            this.lbFilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFilterText.Location = new System.Drawing.Point(344, 366);
+            this.lbFilterText.Name = "lbFilterText";
+            this.lbFilterText.Size = new System.Drawing.Size(185, 26);
+            this.lbFilterText.TabIndex = 11;
+            this.lbFilterText.TextChanged += new System.EventHandler(this.lbFilterText_TextChanged);
+            // 
+            // cbIsActiveFilter
+            // 
+            this.cbIsActiveFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIsActiveFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIsActiveFilter.FormattingEnabled = true;
+            this.cbIsActiveFilter.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cbIsActiveFilter.Location = new System.Drawing.Point(344, 364);
+            this.cbIsActiveFilter.Name = "cbIsActiveFilter";
+            this.cbIsActiveFilter.Size = new System.Drawing.Size(121, 28);
+            this.cbIsActiveFilter.TabIndex = 12;
+            this.cbIsActiveFilter.Visible = false;
+            this.cbIsActiveFilter.SelectedIndexChanged += new System.EventHandler(this.cbIsActiveFilter_SelectedIndexChanged);
+            // 
             // frmListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 826);
+            this.Controls.Add(this.cbIsActiveFilter);
+            this.Controls.Add(this.lbFilterText);
+            this.Controls.Add(this.cbFilterOptions);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddUser);
@@ -107,7 +169,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmListUsers";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListUsers";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -123,5 +185,9 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbFilterOptions;
+        private System.Windows.Forms.TextBox lbFilterText;
+        private System.Windows.Forms.ComboBox cbIsActiveFilter;
     }
 }

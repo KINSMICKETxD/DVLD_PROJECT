@@ -46,6 +46,151 @@ namespace DVLD_PROJECT.Users
                 dataGridView1.Columns[4].Width = 180;
             }
         }
+
+        private void lbFilterText_TextChanged(object sender, EventArgs e)
+        {
+            switch (cbFilterOptions.Text)
+            {
+                case "User ID":
+                    filterDataByUserID(lbFilterText.Text);
+                    break;
+                case "Person ID":
+                    filterDataByPersonID(lbFilterText.Text);
+                    break;
+                case "FullName":
+                    filterDataByFullName(lbFilterText.Text);
+                    break;
+                case "UserName":
+                    filterDataByUserName(lbFilterText.Text);
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
+        
+        private void filterDataByUserID(string userID)
+        {
+            if (!string.IsNullOrEmpty(lbFilterText.Text))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "UserID = " + userID;
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadUsersData();
+            }
+        }
+
+        private void filterDataByFullName(string option)
+        {
+            if (!string.IsNullOrEmpty(option))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+
+                bs.Filter = "FullName like '%" + option + "%'";
+
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadUsersData();
+            }
+        }
+
+        private void filterDataByPersonID(string personID)
+        {
+            if (!string.IsNullOrEmpty(personID))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "PersonID = " + personID;
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadUsersData();
+            }
+        }
+
+        private void filterDataByUserName(string userName)
+        {
+            if (!string.IsNullOrEmpty(userName))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "UserName like '%" + userName + "%'";
+
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadUsersData();
+            }
+        }
+
+        private void filterDataByIsActive()
+        {
+            
+            if(cbIsActiveFilter.Text == "Yes")
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "isActive = " + 1;
+                dataGridView1.DataSource = bs;
+            }else if(cbIsActiveFilter.Text == "No")
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "isActive = " + 0;
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void cbFilterOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbFilterOptions.SelectedIndex == 5)
+            {
+                lbFilterText.Visible = false;
+                cbIsActiveFilter.Visible = true;
+            }
+            else
+            {
+                lbFilterText.Visible = true;
+                cbIsActiveFilter.Visible = false;
+
+            }
+            loadUsersData();
+        }
+
+        private void cbIsActiveFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbIsActiveFilter.SelectedIndex == 1)
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "isActive = " + 1;
+                dataGridView1.DataSource = bs;
+            }else if(cbIsActiveFilter.SelectedIndex == 2)
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "isActive = " + 0;
+                dataGridView1.DataSource = bs;
+            }
+            else
+            {
+                loadUsersData();
+            }
+        }
     }
 
     
