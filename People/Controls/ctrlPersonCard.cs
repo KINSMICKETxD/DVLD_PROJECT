@@ -47,6 +47,36 @@ namespace DVLD_PROJECT.People.Controls
             lbCountry.Text = person.countryName;
             loadImage(person.imagePath);
         }
+
+        public void loadPersonDataToControl(int personID)
+        {
+            person = clsPerson.find(personID);
+            if(person != null)
+            {
+                lbPersonId.Text = person.personId.ToString();
+                lbName.Text = person.firstName + " " + person.lastName;
+                lbNationalNum.Text = person.nationalNumber.ToString();
+                if (person.gendor == 0)
+                {
+                    lbGendor.Text = "Male";
+                }
+                else
+                {
+                    lbGendor.Text = "Female";
+                }
+                lbEmail.Text = person.email;
+                lbAddress.Text = person.addresse;
+                lbDateOfBirth.Text = person.dateOfBirth.ToShortDateString();
+                lbPhone.Text = person.phoneNumber;
+                lbCountry.Text = person.countryName;
+                loadImage(person.imagePath);
+            }
+            else
+            {
+                MessageBox.Show("Person Doesn't exist !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+        }
         private void loadImage(string imagePath)
         {
             if (imagePath != null)
@@ -87,6 +117,9 @@ namespace DVLD_PROJECT.People.Controls
             }
             
         }
+
+
+
 
     }
 }

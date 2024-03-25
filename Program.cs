@@ -19,7 +19,7 @@ namespace DVLD_PROJECT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //callLoginForm(new frmLogin());
-            Application.Run(new frmListUsers());
+            Application.Run(new frmAddNewUpdateUser());
 
         }
 
