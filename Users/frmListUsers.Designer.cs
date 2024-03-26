@@ -192,6 +192,7 @@
             this.addNewUserToolStripMenuItem1.Name = "addNewUserToolStripMenuItem1";
             this.addNewUserToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.addNewUserToolStripMenuItem1.Text = "Add New User";
+            this.addNewUserToolStripMenuItem1.Click += new System.EventHandler(this.addNewUserToolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem1
             // 
@@ -200,6 +201,7 @@
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem1
             // 
@@ -208,6 +210,7 @@
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // changePasswordToolStripMenuItem
             // 

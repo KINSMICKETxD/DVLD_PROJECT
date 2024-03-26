@@ -13,9 +13,22 @@ namespace DVLD_PROJECT.Users
 {
     public partial class frmAddNewUpdateUser : Form
     {
+        public enum eSaveMode { addNew, update }
+
+        private eSaveMode mode;
         public frmAddNewUpdateUser()
         {
             InitializeComponent();
+            mode = eSaveMode.addNew;
+        }
+
+        public frmAddNewUpdateUser(int userID,int personID)
+        {
+            InitializeComponent();
+            fillFormWithData(personID, clsUser.find(userID));
+            ctrlPersonCardWithFilter1.disableFilter();
+            btnNext.Enabled = false;
+            mode = eSaveMode.update;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -86,11 +99,17 @@ namespace DVLD_PROJECT.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsUser user = new clsUser();
-            if (loadUserDataToObject(user))
+            clsUser user;
+            if(mode == eSaveMode.update)
             {
-                fillFormWithData(ctrlPersonCardWithFilter1.personID, user);
+                user = clsUser.find(int.Parse(lbUserId.Text));
             }
+            else
+            {
+                user = new clsUser();
+            }
+
+            loadUserDataToObject(user);
         }
 
         private bool loadUserDataToObject(clsUser user)
@@ -110,7 +129,7 @@ namespace DVLD_PROJECT.Users
                 }
                 if (user.saveUser())
                 {
-                    MessageBox.Show("User Saved Successfully !", "", MessageBoxButtons.OK);
+                    MessageBox.Show("User Saved Successfully !", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     return true;
                 }
             }
@@ -118,6 +137,7 @@ namespace DVLD_PROJECT.Users
             {
                 MessageBox.Show("User Info should not be empty !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
             return false;
             
         }

@@ -212,6 +212,39 @@ namespace DVLD_PROJECT.Users
             frmUserInfo frmUserInfo = new frmUserInfo(userID);
             frmUserInfo.ShowDialog();
         }
+
+        private void addNewUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAddNewUpdateUser newUser = new frmAddNewUpdateUser();
+            
+            newUser.ShowDialog();
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int userId;
+            int personId;
+            int.TryParse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), out userId);
+            int.TryParse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), out personId);
+            frmAddNewUpdateUser editUser = new frmAddNewUpdateUser(userId,personId);
+            editUser.ShowDialog();
+            loadUsersData();
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int userId;
+            int.TryParse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), out userId);
+            if (clsUser.deleteUserById(userId))
+            {
+                MessageBox.Show("User delete Successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("user have data linked to it", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            loadUsersData();
+        }
     }
 
     

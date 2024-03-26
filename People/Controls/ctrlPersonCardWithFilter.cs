@@ -70,5 +70,10 @@ namespace DVLD_PROJECT.People.Controls
             this.personID = personID;
             loadDataToControl(personID);
         }
+
+        public void disableFilter()
+        {
+            groupBox1.Enabled = false;
+        }
     }
 }
