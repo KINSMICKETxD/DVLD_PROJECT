@@ -157,16 +157,22 @@ namespace DVLD_PROJECT.Users
 
         private void cbFilterOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if(cbFilterOptions.SelectedIndex == 5)
             {
                 lbFilterText.Visible = false;
                 cbIsActiveFilter.Visible = true;
             }
+            else if(cbFilterOptions.SelectedIndex == 0)
+            {
+                lbFilterText.Visible = false;
+                cbIsActiveFilter.Visible = false;
+
+            }
             else
             {
                 lbFilterText.Visible = true;
                 cbIsActiveFilter.Visible = false;
-
             }
             loadUsersData();
         }
@@ -190,6 +196,13 @@ namespace DVLD_PROJECT.Users
             {
                 loadUsersData();
             }
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmAddNewUpdateUser frmAddUser = new frmAddNewUpdateUser();
+            frmAddUser.ShowDialog();
+            loadUsersData();
         }
     }
 

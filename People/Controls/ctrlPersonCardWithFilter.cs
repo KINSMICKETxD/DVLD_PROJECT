@@ -58,7 +58,17 @@ namespace DVLD_PROJECT.People.Controls
             ctrlPersonCard1.loadPersonDataToControl(nationalNumber);
         }
 
-       
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.dataBack += dataBack;
 
+            frm.ShowDialog();
+        }
+        private void dataBack(object sender,int personID)
+        {
+            this.personID = personID;
+            loadDataToControl(personID);
+        }
     }
 }

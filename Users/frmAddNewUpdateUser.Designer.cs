@@ -276,8 +276,9 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(161, 44);
             this.Close.TabIndex = 3;
-            this.Close.Text = "Save";
+            this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = true;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // errorProvider1
             // 

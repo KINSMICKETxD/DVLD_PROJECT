@@ -62,6 +62,7 @@
             this.btnAddNewPerson.Size = new System.Drawing.Size(67, 49);
             this.btnAddNewPerson.TabIndex = 4;
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // btnFindPerson
             // 

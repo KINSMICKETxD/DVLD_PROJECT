@@ -15,6 +15,12 @@ namespace DVLD_PROJECT.People
 {
     public partial class frmAddUpdatePerson : Form
     {
+
+        public delegate void dataBackEventHandler(object sender,int personID);
+
+        public event dataBackEventHandler dataBack;
+
+
         enum eMode { addnew, update };
 
         private eMode mode;
@@ -395,7 +401,16 @@ namespace DVLD_PROJECT.People
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(lbPersonID.Text == "N/A")
+            {
+                this.Close();
+            }
+            else
+            {
+                int.TryParse(lbPersonID.Text, out int personID);
+                dataBack?.Invoke(this, personID);
+                this.Close();
+            }
         }
     }
 }

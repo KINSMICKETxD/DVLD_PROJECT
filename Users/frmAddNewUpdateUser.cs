@@ -87,27 +87,39 @@ namespace DVLD_PROJECT.Users
         private void btnSave_Click(object sender, EventArgs e)
         {
             clsUser user = new clsUser();
-            loadUserDataToObject(user);
-            fillFormWithData(ctrlPersonCardWithFilter1.personID,user);
+            if (loadUserDataToObject(user))
+            {
+                fillFormWithData(ctrlPersonCardWithFilter1.personID, user);
+            }
         }
 
-        private void loadUserDataToObject(clsUser user)
+        private bool loadUserDataToObject(clsUser user)
         {
             user.personId = ctrlPersonCardWithFilter1.personID;
-            user.userName = txtUserName.Text;
-            user.password = txtPassword.Text;
-            if (chkbIsActive.Checked)
+            if(!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {
-                user.isActive = true;
+                user.userName = txtUserName.Text;
+                user.password = txtPassword.Text;
+                if (chkbIsActive.Checked)
+                {
+                    user.isActive = true;
+                }
+                else
+                {
+                    user.isActive = false;
+                }
+                if (user.saveUser())
+                {
+                    MessageBox.Show("User Saved Successfully !", "", MessageBoxButtons.OK);
+                    return true;
+                }
             }
             else
             {
-                user.isActive = false;
+                MessageBox.Show("User Info should not be empty !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            if (user.saveUser())
-            {
-                MessageBox.Show("User Saved Successfully !", "", MessageBoxButtons.OK);
-            }
+            return false;
+            
         }
 
         public void loadPersonInfoToForm(int personID)
@@ -129,6 +141,10 @@ namespace DVLD_PROJECT.Users
             loadUserInfoToForm(user);
             lbAddUpdateUser.Text = "Update User";
         }
-       
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
