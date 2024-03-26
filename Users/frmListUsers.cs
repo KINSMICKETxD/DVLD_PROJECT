@@ -204,6 +204,14 @@ namespace DVLD_PROJECT.Users
             frmAddUser.ShowDialog();
             loadUsersData();
         }
+
+        private void showDetailsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int userID;
+            int.TryParse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),out userID);
+            frmUserInfo frmUserInfo = new frmUserInfo(userID);
+            frmUserInfo.ShowDialog();
+        }
     }
 
     
