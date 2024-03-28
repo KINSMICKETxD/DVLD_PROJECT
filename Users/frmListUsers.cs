@@ -245,6 +245,14 @@ namespace DVLD_PROJECT.Users
             }
             loadUsersData();
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int userId = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            frmChangePassword frmChangePassword = new frmChangePassword(userId);
+            frmChangePassword.ShowDialog();
+            loadUsersData();
+        }
     }
 
     

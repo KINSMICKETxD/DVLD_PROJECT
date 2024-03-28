@@ -13,6 +13,10 @@ namespace DVLD_PROJECT.Users.Controls
 {
     public partial class ctrlUserCard : UserControl
     {
+        public string password { private set; get; }
+
+        public int userId { private set; get; }
+        
         public ctrlUserCard()
         {
             InitializeComponent();
@@ -21,8 +25,10 @@ namespace DVLD_PROJECT.Users.Controls
         {
             clsUser user = clsUser.find(userId);
             ctrlPersonCard1.loadPersonDataToControl(user.personId);
+            this.userId = user.userid;
             lbUserID.Text = user.userid.ToString();
             lbUserName.Text = user.userName.ToString();
+            password = user.password.ToString();
             if (user.isActive)
             {
                 lbIsActive.Text = "Yes";

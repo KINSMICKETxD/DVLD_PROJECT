@@ -25,7 +25,7 @@ namespace DVLD_PROJECT.Users
         public frmAddNewUpdateUser(int userID,int personID)
         {
             InitializeComponent();
-            fillFormWithData(personID, clsUser.find(userID));
+            fillFormWithData(personID,userID);
             ctrlPersonCardWithFilter1.disableFilter();
             btnNext.Enabled = false;
             mode = eSaveMode.update;
@@ -109,10 +109,10 @@ namespace DVLD_PROJECT.Users
                 user = new clsUser();
             }
 
-            loadUserDataToObject(user);
+            loadUserDataToObjectAndSave(user);
         }
 
-        private bool loadUserDataToObject(clsUser user)
+        private bool loadUserDataToObjectAndSave(clsUser user)
         {
             user.personId = ctrlPersonCardWithFilter1.personID;
             if(!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text))
@@ -146,8 +146,9 @@ namespace DVLD_PROJECT.Users
         {
             ctrlPersonCardWithFilter1.loadDataToControl(personID);
         }
-        public void loadUserInfoToForm(clsUser user)
+        public void loadUserInfoToForm(int userId)
         {
+            clsUser user = clsUser.find(userId);
             lbUserId.Text = user.userid.ToString();
             txtUserName.Text = user.userName;
             txtPassword.Text = user.password;
@@ -155,10 +156,10 @@ namespace DVLD_PROJECT.Users
             chkbIsActive.Checked = user.isActive;
         }
 
-        public void fillFormWithData(int personID,clsUser user)
+        public void fillFormWithData(int personID,int userId)
         {
             loadPersonInfoToForm(personID);
-            loadUserInfoToForm(user);
+            loadUserInfoToForm(userId);
             lbAddUpdateUser.Text = "Update User";
         }
 
